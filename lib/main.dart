@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'dart:ui';
 
 void main() {
@@ -32,9 +34,9 @@ class _MyHomePageState extends State<MyHomePage> {
   double spacing = 20.0;
 
   List<Color> colorA = [Colors.purple.shade400, Colors.pink.shade400];
-  List<Color> colorB = [Colors.red.shade400, Colors.orange.shade400];
-  List<Color> colorC = [Colors.purple.shade400, Colors.blue.shade400];
-  List<Color> colorD = [Colors.blue.shade400, Colors.green.shade400];
+  List<Color> colorB = [Colors.purple.shade400, Colors.blue.shade400];
+  List<Color> colorC = [Colors.blue.shade400, Colors.green.shade400];
+  List<Color> colorD = [Colors.red.shade400, Colors.orange.shade400];
 
 /* This is almost Microsoft logo?
   List<Color> colorA = [Colors.purple.shade400, Colors.pink.shade400];,Colors.orange.shade400];
@@ -42,7 +44,7 @@ class _MyHomePageState extends State<MyHomePage> {
   List<Color> colorC = [Colors.purple.shade400, Colors.blue.shade400];,Colors.green.shade400,];
   List<Color> colorD = [Colors.blue.shade400, Colors.green.shade400];
   */
-/* This is almost Microsoft logo
+/* 
   Color colorA = Colors.blueAccent;
   Color colorB = Colors.pinkAccent;
   Color colorC = Colors.deepOrange[300];
@@ -55,15 +57,18 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Stack(
-        children: <Widget>[
-          Center(
-            child: Container(
-              child: Row(
+      body: Center(
+        child: Container(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            crossAxisAlignment: CrossAxisAlignment.end,
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
-                  Column(
+                  Row(
                     mainAxisSize: MainAxisSize.min,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
@@ -72,7 +77,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         direction: Alignment.bottomLeft,
                       ),
                       SizedBox(
-                        height: spacing,
+                        width: spacing,
                       ),
                       LogoContainer(
                         color: colorB,
@@ -81,9 +86,9 @@ class _MyHomePageState extends State<MyHomePage> {
                     ],
                   ),
                   SizedBox(
-                    width: spacing,
+                    height: spacing,
                   ),
-                  Column(
+                  Row(
                     mainAxisSize: MainAxisSize.min,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
@@ -92,7 +97,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         direction: Alignment.bottomLeft,
                       ),
                       SizedBox(
-                        height: spacing,
+                        width: spacing,
                       ),
                       LogoContainer(
                         color: colorD,
@@ -100,27 +105,52 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                     ],
                   ),
+                  /* icon
+                  FaIcon(
+                    FontAwesomeIcons.microsoft,
+                    color: Colors.white,
+                  ),
+                  */
+                  /* name bottom
+                  Container(
+                    child: Text(
+                      'Hattomo',
+                      style: Theme.of(context).textTheme.headline1.copyWith(
+                           // color: Colors.grey[400],
+                          ),
+                      /* google font (path provider required)
+                      style: GoogleFonts.balooThambi(
+                        textStyle: Theme.of(context).textTheme.headline1.copyWith(
+                              color: Colors.grey[400],
+                            ),
+                      ),
+                      */
+                    ),
+                  ),
+                  */
                 ],
               ),
-            ),
-          ),
-          /*
-          Center(
-            child: ClipRect(
-              child: BackdropFilter(
-                filter: ImageFilter.blur(sigmaX: 1.0, sigmaY: 1.0),
-                child: Container(
-                  width: 300.0,
-                  height: 300.0,
-                  decoration: BoxDecoration(
-                    color: Colors.white.withOpacity(0.3),
-                  ),
+              /* name right
+              Container(
+                child: Text(
+                  'Hattomo',
+                  style: Theme.of(context).textTheme.headline1.copyWith(
+                        // color: Colors.grey[400],
+                        fontSize: 350.0,
+                      ),
+                  /*
+                      style: GoogleFonts.balooThambi(
+                        textStyle: Theme.of(context).textTheme.headline1.copyWith(
+                              color: Colors.grey[400],
+                            ),
+                      ),
+                      */
                 ),
               ),
-            ),
+              */
+            ],
           ),
-          */
-        ],
+        ),
       ),
     );
   }
