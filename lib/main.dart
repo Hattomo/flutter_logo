@@ -1,7 +1,8 @@
-import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'dart:ui';
+
+import 'package:flutter/material.dart';
+// import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+// import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(MyApp());
@@ -16,13 +17,14 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
 
+@immutable
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+  const MyHomePage({Key key, this.title}) : super(key: key);
 
   final String title;
 
@@ -33,10 +35,22 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   double spacing = 20.0;
 
-  List<Color> colorA = [Colors.purple.shade400, Colors.pink.shade400];
-  List<Color> colorB = [Colors.purple.shade400, Colors.blue.shade400];
-  List<Color> colorC = [Colors.blue.shade400, Colors.green.shade400];
-  List<Color> colorD = [Colors.red.shade400, Colors.orange.shade400];
+  final List<Color> colorA = <Color>[
+    Colors.purple.shade400,
+    Colors.pink.shade400
+  ];
+  final List<Color> colorB = <Color>[
+    Colors.purple.shade400,
+    Colors.blue.shade400
+  ];
+  final List<Color> colorC = <Color>[
+    Colors.blue.shade400,
+    Colors.green.shade400
+  ];
+  final List<Color> colorD = <Color>[
+    Colors.red.shade400,
+    Colors.orange.shade400
+  ];
 
 /* This is almost Microsoft logo?
   List<Color> colorA = [Colors.purple.shade400, Colors.pink.shade400];,Colors.orange.shade400];
@@ -156,14 +170,16 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
+@immutable
 class LogoContainer extends StatelessWidget {
-  LogoContainer({Key key, this.color, this.direction}) : super(key: key);
+  const LogoContainer({Key key, this.color, this.direction}) : super(key: key);
   final List<Color> color;
   //final Color color;
   final Alignment direction;
-  final double iconSize = 200.0;
+
   @override
   Widget build(BuildContext context) {
+    const double iconSize = 200.0;
     return Container(
       height: iconSize,
       width: iconSize,
@@ -178,7 +194,7 @@ class LogoContainer extends StatelessWidget {
           )
         ],
         */
-        borderRadius: BorderRadius.all(
+        borderRadius: const BorderRadius.all(
           Radius.circular(20.0),
         ),
         //color: color,
